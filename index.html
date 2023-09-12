@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Resistor coding</title>
+  </head>
+  <body>
+    <div>
+      <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+          background-image: url(https://www.linquip.com/blog/wp-content/uploads/2023/02/featured.webp);
+          width: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <header class="display-6" style="font-weight: bold">
+          Resistor Color Coding Calculator
+        </header>
+      </div>
+      <div class="row d-flex justify-content-center" id="container">
+        <div class="col-md-11">
+          <h2 class="unit-title">Number of Bands</h2>
+          <div class="calcType">
+            <input
+              type="radio"
+              class="btn-check"
+              name="BandSelector"
+              id="dk-rb1"
+              checked="true"
+            />
+            <label class="btn btn-outline-primary" for="dk-rb1">3 Band</label>
+            <input
+              type="radio"
+              class="btn-check"
+              name="BandSelector"
+              id="dk-rb2"
+            />
+            <label class="btn btn-outline-primary" for="dk-rb2">4 Band</label>
+            <input
+              type="radio"
+              class="btn-check"
+              name="BandSelector"
+              id="dk-rb3"
+            />
+            <label class="btn btn-outline-primary" for="dk-rb3">5 Band</label>
+            <input
+              type="radio"
+              class="btn-check"
+              name="BandSelector"
+              id="dk-rb4"
+            />
+            <label class="btn btn-outline-primary" for="dk-rb4">6 Band</label>
+          </div>
+          <div id="parameter">
+            <h2>Resistor parameter</h2>
+            <dl id="first-band">
+              <dt>
+                <div class="label"><span>First Band</span></div>
+              </dt>
+              <dd>
+                <select id="first-band-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="0">Black</option>
+                  <option value="1">Brown</option>
+                  <option value="2">Red</option>
+                  <option value="3">Orange</option>
+                  <option value="4">Yellow</option>
+                  <option value="5">Green</option>
+                  <option value="6">Blue</option>
+                  <option value="7">Violet</option>
+                  <option value="8">Grey</option>
+                  <option value="9">White</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="second-band">
+              <dt>
+                <div class="label"><span>Second Band</span></div>
+              </dt>
+              <dd>
+                <select id="second-band-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="0">Black</option>
+                  <option value="1">Brown</option>
+                  <option value="2">Red</option>
+                  <option value="3">Orange</option>
+                  <option value="4">Yellow</option>
+                  <option value="5">Green</option>
+                  <option value="6">Blue</option>
+                  <option value="7">Violet</option>
+                  <option value="8">Grey</option>
+                  <option value="9">White</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="third-band" style="display: none">
+              <dt>
+                <div class="label"><span>Third Band</span></div>
+              </dt>
+              <dd>
+                <select id="third-band-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="0">Black</option>
+                  <option value="1">Brown</option>
+                  <option value="2">Red</option>
+                  <option value="3">Orange</option>
+                  <option value="4">Yellow</option>
+                  <option value="5">Green</option>
+                  <option value="6">Blue</option>
+                  <option value="7">Violet</option>
+                  <option value="8">Grey</option>
+                  <option value="9">White</option>
+                  <option value="0.1">Gold</option>
+                  <option value="0.01">Silver</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="multiplier">
+              <dt>
+                <div class="label"><span>Multiplier</span></div>
+              </dt>
+              <dd>
+                <select id="multiplier-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="0">Black</option>
+                  <option value="1">Brown</option>
+                  <option value="2">Red</option>
+                  <option value="3">Orange</option>
+                  <option value="4">Yellow</option>
+                  <option value="5">Green</option>
+                  <option value="6">Blue</option>
+                  <option value="7">Violet</option>
+                  <option value="8">Grey</option>
+                  <option value="9">White</option>
+                  <option value="0.1">Gold</option>
+                  <option value="0.01">Silver</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="tolerance" style="display: none">
+              <dt>
+                <div class="label"><span>Tolerance</span></div>
+              </dt>
+              <dd>
+                <select id="tolerance-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="1">Brown</option>
+                  <option value="2">Red</option>
+                  <option value="0.5">Green</option>
+                  <option value="0.25">Blue</option>
+                  <option value="0.1">Violet</option>
+                  <option value="5">Gold</option>
+                  <option value="10">Silver</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="ppm" style="display: none">
+              <dt>
+                <div class="label"><span>PPM</span></div>
+              </dt>
+              <dd>
+                <select id="ppm-value" class="form-select">
+                  <option value="none">Select the Color</option>
+                  <option value="100">Brown</option>
+                  <option value="50">Red</option>
+                  <option value="15">Orange</option>
+                  <option value="25">Yellow</option>
+                  <option value="10">Blue</option>
+                  <option value="5">Violet</option>
+                </select>
+              </dd>
+            </dl>
+            <dl id="units">
+              <dt>
+                <div class="label"><span>Units</span></div>
+              </dt>
+              <dd>
+                <select id="units-value" class="form-select">
+                  <option value="none">Select the Unit</option>
+                  <option value="1">Ω</option>
+                  <option value="1e3">kΩ</option>
+                  <option value="1e6">MΩ</option>
+                  <option value="1e9">GΩ</option>
+                </select>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <div class="label"><span>Resistor Value</span></div>
+              </dt>
+              <dd>
+                <div>
+                  <textarea
+                    class="form-control"
+                    name="result"
+                    id="result"
+                    cols="30"
+                    rows="3"
+                    placeholder="Result"
+                  ></textarea>
+                </div>
+              </dd>
+            </dl>
+            <input
+              type="button"
+              id="calculate"
+              class="btn btn-primary btn-block mb-4"
+              value="Calculate"
+            />
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div
+          class="text-center p-4"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2023 Copyright: Surya MK
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

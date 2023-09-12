@@ -1,0 +1,32 @@
+
+header {
+  max-height: max-content;
+  margin-bottom: 25px;
+  padding: 50px 10px;
+  color: white;
+  
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+}
+#container {
+  width: 100%;
+  margin-right:100%;
+  padding: 50px;
+}
+h2{
+    text-transform: capitalize;
+}
+.unit-title{
+    margin:20px 0px;
+}
+#parameter h2{
+    margin: 20px 0px;
+    font-size:1.5em;
+}
+.label{
+    margin:5px 0px;
+}
+#parameter{
+    margin-top:20px;
+}
